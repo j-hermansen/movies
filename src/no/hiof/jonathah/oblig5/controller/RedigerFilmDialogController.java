@@ -44,7 +44,7 @@ public class RedigerFilmDialogController {
         this.filmSomRedigeres = filmSomRedigeres;
 
         // Sjekker om film har en verdi, eller er null,
-        // har den en verdi skal den redigeres og vi fyller inn data fra den
+        // har den en verdi skal den redigeres og man fyller inn data fra den
         if (filmSomRedigeres != null) {
             tittelTextField.setText(filmSomRedigeres.getTittel());
             beskrivelseTextArea.setText(filmSomRedigeres.getBeskrivelse());
@@ -57,7 +57,7 @@ public class RedigerFilmDialogController {
     private void okValgt() {
         // Sjekker om inputfeltene er gyldige
         if (sjekkOmInputErGyldig()) {
-            // Hvis de er det, fyller vi opp filmobjektet vårt med den nye dataen fra feltene
+            // Hvis de er det, fyller man opp filmobjektet vårt med den nye dataen fra feltene
             filmSomRedigeres.setTittel(tittelTextField.getText());
             filmSomRedigeres.setBeskrivelse(beskrivelseTextArea.getText());
             filmSomRedigeres.setUtgivelsesdato(utgivelsesdatoDatePicker.getValue());
@@ -68,7 +68,7 @@ public class RedigerFilmDialogController {
                 filmSomRedigeres.setPosterURL("https://www.directv.com/img/movies.jpg");
             }
 
-            // Setter at vi avsluttet ved å trykke OK
+            // Setter at man avsluttet ved å trykke OK
             okClicked = true;
             // Lukker vinduet
             dialogStage.close();
