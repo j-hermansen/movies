@@ -19,7 +19,7 @@ public class Main {
     }
 
     private static void lagOgSkrivUtInformasjonOmStrangerThings() {
-        // Lager og instansierer objektet frankDarabont av typen Person (som vi senere setter som regisor)
+        // Lager og instansierer objektet mattDuffer av typen Person (som vi senere setter som regisor)
         Person mattDuffer = new Person("Matt", "Duffer");
 
         // Lager og instansierer objektet strangerThings av typen TvSerie
