@@ -71,7 +71,7 @@ public class FilmOversiktController {
         redigerButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                // Henter ut den filmen vi har valgt (altså den vi skal redigere)
+                // Henter ut den filmen vi har valgt (altså den man skal redigere)
                 Film enFilm = filmListView.getSelectionModel().getSelectedItem();
 
                 // Undersøker om den ikke er null (altså at det er faktisk er valgt en film)
@@ -88,7 +88,7 @@ public class FilmOversiktController {
                         oppdaterFilmInformasjon(enFilm);
                     }
                 }
-                // Hvis ikke viser vi en liten alert melding om at film må velges
+                // Hvis ikke viser man en liten alert melding om at film må velges
                 else {
                     Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
                     alertDialog.setTitle("Ingen film valgt");
@@ -98,11 +98,11 @@ public class FilmOversiktController {
             }
         });
 
-        // Setter opp at vi vil ha beskjed hver gang en film endres, slik at vi kan oppdatere grensesnittet
+        // Setter opp at man vil ha beskjed hver gang en film endres, slik at man kan oppdatere grensesnittet
         filmListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Film>() {
             @Override
             public void changed(ObservableValue<? extends Film> observable, Film gammelFilm, Film nyFilm) {
-                // Kaller vår egen metode for å oppdatere grensesnittet med den filmen vi har valgt
+                // Kaller vår egen metode for å oppdatere grensesnittet med den filmen man har valgt
                 oppdaterFilmInformasjon(nyFilm);
             }
         });
@@ -215,7 +215,7 @@ public class FilmOversiktController {
     }
 
     private void oppdaterFilmInformasjon(Film enFilm) {
-        // Sjekker om filmen vi får inn, ikke er null
+        // Sjekker om filmen man får inn, ikke er null
         if (enFilm != null) {
             // Setter filmtittelen til titteltekstfeltet
             tittelText.setText(enFilm.getTittel());
@@ -227,8 +227,8 @@ public class FilmOversiktController {
             utgivelsesdatoTextField.setText(enFilm.getUtgivelsesdato() != LocalDate.MIN ? enFilm.getUtgivelsesdato().toString() : "");
 
             // Undersøker om spilletid er høyere enn 0
-            // Er den det legger vi spilletiden + minutter til tekstfeltet
-            // Hvis den er 0 (eller teknisk sett lavere), setter vi tekstfeltet til å være tomt
+            // Er den det legger man spilletiden + minutter til tekstfeltet
+            // Hvis den er 0 (eller teknisk sett lavere), setter man tekstfeltet til å være tomt
             spilletidTextField.setText(enFilm.getSpilletid() > 0 ? enFilm.getSpilletid() + " minutter" : "");
 
             // lager et bildeobjekt
